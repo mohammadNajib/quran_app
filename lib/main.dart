@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
               builder: (context, state) {
                 return MaterialApp(
                   locale: state.locale,
+                  title: 'القرآن الكريم',
                   supportedLocales: const [Locale('en'), Locale('ar')],
                   localizationsDelegates: const [
                     AppLocalizations.delegate,
@@ -34,9 +35,7 @@ class MyApp extends StatelessWidget {
                   ],
                   localeResolutionCallback: (deviceLocale, supportedLocales) {
                     for (var locale in supportedLocales) {
-                      if (deviceLocale != null && deviceLocale.languageCode == locale.languageCode) {
-                        return deviceLocale;
-                      }
+                      if (deviceLocale != null && deviceLocale.languageCode == locale.languageCode) return deviceLocale;
                     }
                     return supportedLocales.first;
                   },
