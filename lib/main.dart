@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'core/localization/localization.dart';
 import 'core/theme/bloc/theme_bloc.dart';
 
 void main() async {
@@ -18,7 +20,18 @@ class MyApp extends StatelessWidget {
         builder: (context, state) {
           if (state is LoadedThemeState) {
             return MaterialApp(
-                theme: state.themeData, debugShowCheckedModeBanner: false, title: 'Quran', home: Container());
+              supportedLocales: const [Locale('en'), Locale('ar')],
+              localizationsDelegates: const [
+                AppLocalizations.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate
+              ],
+              theme: state.themeData,
+              debugShowCheckedModeBanner: false,
+              title: 'Quran',
+              home: Container(),
+            );
           }
           return Container();
         },
