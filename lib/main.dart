@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'core/theme/bloc/theme_bloc.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -9,11 +12,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Technical Test',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(useMaterial3: true),
-      home: Container(),
+    return BlocProvider(
+      create: (context) => ThemeBloc()..add(GetCurrentThemeEvent()),
+      child: BlocBuilder<ThemeBloc, ThemeState>(
+        builder: (context, state) {
+          if (state is LoadedThemeState) {
+            return MaterialApp(
+                theme: state.themeData, debugShowCheckedModeBanner: false, title: 'Quran', home: Container());
+          }
+          return Container();
+        },
+      ),
     );
   }
 }
