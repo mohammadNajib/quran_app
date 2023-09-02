@@ -26,6 +26,7 @@ dependencies:
   equatable: ^2.0.5
   dartz: ^0.10.1
   get_it: ^7.6.0
+  auto_size_text: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -39,4 +40,10 @@ flutter:
 
 
   uses-material-design: true
+
+
+  fonts:
+    - family: UthmanicHafs_v2-1
+      fonts:
+        - asset: fonts/UthmanicHafs_v2-1.ttf
 
