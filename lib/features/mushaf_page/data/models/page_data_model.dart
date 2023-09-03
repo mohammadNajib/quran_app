@@ -1,4 +1,4 @@
-import 'package:quran_app/page_date_entity.dart';
+import 'package:quran_app/features/mushaf_page/domain/entities/page_date_entity.dart';
 
 class PageDataModel extends PageDataEntity {
   const PageDataModel({required surahNumber, required startVerse, required endVerse})

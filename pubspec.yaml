@@ -27,6 +27,7 @@ dependencies:
   dartz: ^0.10.1
   get_it: ^7.6.0
   auto_size_text: ^3.0.0
+  dio: ^5.3.2
 
 dev_dependencies:
   flutter_test:

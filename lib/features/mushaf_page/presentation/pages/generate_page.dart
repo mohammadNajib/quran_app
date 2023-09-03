@@ -1,6 +1,6 @@
 import 'package:quran/quran.dart';
-import 'package:quran_app/core/page_data_model.dart';
-import 'package:quran_app/page_date_entity.dart';
+import 'package:quran_app/features/mushaf_page/data/models/page_data_model.dart';
+import 'package:quran_app/features/mushaf_page/domain/entities/page_date_entity.dart';
 
 String generatePage({required int pageNumber}) {
   if (pageNumber == 0) return 'القرآن الكريم';
